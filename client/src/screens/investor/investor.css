@@ -1,0 +1,192 @@
+.row {
+  margin: 0;
+  padding: 0;
+}
+.logo{
+  width: 160px;
+  height: 150px;
+  border-radius: 0%;
+  overflow: hidden;
+  margin-top: -6px;
+ 
+}
+
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+  border-radius: 50px;
+}
+
+.has-search .form-control-feedback {
+  padding-left: 10px;
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+.profile {
+  margin-right: 20px;
+}
+
+.profile i {
+  padding-top: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: #e040fb;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 20px;
+  color: white;
+}
+
+.post-btn i {
+  margin-right: 10px;
+}
+
+.post {
+  width: 600px;
+  padding: 20px;
+  border: 3px solid #e040fb;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.post h4 {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.post h5 {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.hot-topic {
+  width: 250px;
+  height: 100px;
+  background-color: rgb(218, 218, 218);
+  border-radius: 10px;
+  padding: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.profile-img {
+  width: 60px;
+}
+
+.profile-img .img {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.profile-img .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.post p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.post i {
+  color: whi;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.pollsTitle {
+  margin-left: 20px;
+  color: #14279b;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pollsTitleText {
+  margin-left: 20px;
+}
+
+.pollsTags {
+  color: #e6e6e6;
+  margin: 10px;
+}
+.tags {
+  background-color: #14279b;
+  color: #e6e6e6;
+  margin: 10px;
+}
+
+.justify-content-end .btn {
+  text-align: center;
+  height: 40px;
+  width: 100px;
+  margin-top: 30px;
+  transition: 0.8s ease;
+  background-color: #14279b;
+  color: #e6e6e6;
+  font-size: 14px;
+  border-radius: 2rem;
+  font-weight: bold;
+  border: none;
+}
+
+.justify-content-end .btn:hover {
+  transition: 0.8s ease;
+  background-color: #e6e6e6;
+  color: #14279b;
+  font-weight: bold;
+  border: 1px solid #14279b;
+}
+
+.width-container {
+  width: 20%;
+}
+
+.dummyClass {
+  display: none;
+  color: #14279b;
+  color: #3d56b2;
+  color: #5c7aea;
+  color: #e6e6e6;
+}
+
+
+.like-filled{
+  color: #d45555 !important;
+}
+
+.row .title {
+  cursor: pointer;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-bar {
+  margin-bottom: 10px;
+}
+
+.nav-bar .icon i {
+  font-size: 40px;
+  color: #14279b;
+  cursor: pointer;
+}
+
+.profile-image img {
+  width: 40%;
+  border-radius: 50px;
+  object-fit: cover;
+}

@@ -1,0 +1,429 @@
+/* OTP PAGE */
+
+body{
+  background-color: #CCFFFF;
+}
+
+.otp h2 {
+  color: #1d1d1d;
+  margin-bottom: 30px;
+}
+.otp p {
+  color: #1d1d1d;
+}
+.otp p {
+  color: #1d1d1d;
+}
+.container {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  align-items: space-around;
+  justify-content: center;
+  height: 100vh;
+  background-color: transparent;
+}
+.card {
+  width: 100%;
+  padding: 10px;
+  height: 400px;
+  border: none;
+  background-color: transparent;
+}
+
+.btn-primary {
+  background: #1d1d1d;
+  color: #adadad;
+  border-color: #1d1d1d;
+}
+.btn-primary:hover {
+  background: transparent;
+  color: #1d1d1d;
+}
+.btn-secondary {
+  background: #1d1d1d;
+  color: #adadad;
+  border-color: none;
+  margin-right: 20px;
+}
+.btn-secondary:hover {
+  background: #1d1d1d;
+  color: #adadad;
+}
+
+
+/* homepage and loginpage */
+.home_container {
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-top: 100px;
+}
+
+.home_logo > h2{
+  font-weight: bold;
+}
+
+.primary-color {
+  color: #E040FB;
+}
+
+.home_text {
+  width: 30%;
+  padding: 0px 15px;
+}
+
+.main_body {
+  margin-top: 70px;
+}
+
+.main_body > h4 {
+  font-weight: lighter;
+  font-size: 19px;
+}
+
+.buttons_container {
+  padding: 0px 15px;
+}
+
+@media (max-width: 600px) {
+  .main {
+      border-radius: 0px;
+  }
+}
+
+
+.custom-file-upload{
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: black;
+  background-color: #E040FB;
+
+}
+.img1{
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.background{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("../../assets/img/invest.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    
+}
+
+/* sign & signup*/
+.siginPage .sigin-card{
+  margin-top: 30%;
+  width: 80%;
+  padding: 40px;
+  border-radius: 20px;;
+  box-shadow: 2px 2px 15px 2px #5C7AEA;
+  
+}
+
+
+
+.siginPage .headerlogo{
+ 
+  width: 250px;
+  height: 250px;
+  border-radius: none;
+}
+.siginPage .headerlogo:hover{
+  cursor:pointer
+}
+
+.siginPage .headerlogo h3{
+  color:white;
+  font-weight: bold;
+}
+
+.siginPage .headerlogo h4{
+  color:white;
+  font-weight: bold;
+}
+
+.siginPage .sigin-card .card-header{
+  padding:auto;
+  align-self: center;
+  background-color: transparent;
+  border:none;
+  border-color: transparent;
+}
+
+.siginPage .sigin-card .card-header h3{
+  color: #14279B;
+  font-weight: bold;
+}
+
+.siginPage .sigin-card input[type='text'], .siginPage .sigin-card input[type='email'], .siginPage .sigin-card input[type='password']{
+  margin-bottom: 7px;
+  border-color:#14279B;
+  border-radius: 2px;
+  border-width: 2px;
+  padding: 10px;
+  width: 100%;
+}
+.siginPage .sigin-card input[type='text']:target, .siginPage .sigin-card input[type='email']:target, .siginPage .sigin-card input[type='password']:target{
+  border:2px solid #14279B;
+  text-decoration: none;
+}
+
+.siginPage .sigin-card label{
+  font: 1em sans-serif;
+  margin: 7px;
+  color: #14279B;
+  font-weight: bold;
+  
+}
+.siginPage .sigin-card .buttonSignup{
+  text-align: center;
+}
+.siginPage .sigin-card button{
+  width: 100px;
+  margin-top: 5px;
+  text-align: center;
+}
+.siginPage .sigin-card .signupbtn{
+  text-align: center;
+  height: 40px;
+  margin-top: 30px;
+  transition: 0.8s ease;
+  background-color: #14279B;
+  color: #E6E6E6;
+  font-size: 14px;
+  border-radius: 2rem;
+  font-weight: bold;
+  border: none;
+}
+.siginPage .sigin-card .signupbtn:hover{
+ 
+  transition: 0.8s ease;
+  background-color: #E6E6E6;
+  color: #14279B;
+  font-weight: bold;
+  border: 1px solid #14279B;
+}
+.siginPage .sigin-card .sigininContent{
+  width: 100%;
+  text-align: center;
+}
+.siginPage .sigin-card .sigininContent a{
+  color: #14279B;
+  text-decoration: none;
+  padding: auto;
+}
+
+.signupPage{
+  margin-top: 10% !important;
+}
+
+/* homepage*/
+.homeContent{
+  padding: 1%;
+  text-align: center;
+}
+.homebutton{
+  text-align: center;
+  height: 40px;
+  transition: 0.8s ease;
+  background-color: #14279B;
+  color: #E6E6E6;
+  font-size: 14px;
+  border-radius: 2rem;
+  font-weight: bold;
+  border: none;
+  margin-left: 10px;
+}
+.homebutton:hover{
+  transition: 0.8s ease;
+  background-color: #E6E6E6;
+  color: #14279B;
+  font-weight: bold;
+  border: 1px solid #14279B;
+}
+.homeContent{
+  width: 100%;
+}
+.homeContent h2{
+  color: #3D56B2;
+}
+.cardimage{
+  height: 276px;
+  width: 180px;
+}
+.homeContent .paragraph{
+  color: #3D56B2;
+  font-weight: bold;
+  text-align: justify;
+  text-justify: inter-word;
+  margin-top: 20px;
+}
+
+.homePage .homeContent button{
+  text-align: center;
+  height: 40px;
+  width: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: 0.8s ease;
+  background-color: #14279B;
+  color: #E6E6E6;
+  font-size: 14px;
+  border-radius: 2rem;
+  font-weight: bold;
+  border: none;
+  
+}
+.homePage .homeContent button:hover{
+  transition: 0.8s ease;
+  background-color: #E6E6E6;
+  color: #14279B;
+  font-weight: bold;
+  border: 1px solid #14279B;
+}
+
+
+.homeContent a{
+  color: #14279B;
+  text-decoration: none;
+}
+.space{
+  justify-content: space-between;
+}
+.logo{
+  width: 160px;
+  height: 150px;
+  border-radius: 0%;
+  overflow: hidden;
+  margin-top: -6px;
+ 
+}
+.homeCircle{
+  position: fixed;
+    bottom: 0;
+    right: 0;
+    width:50%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+/* OTP */
+.siginPage .otp-card{
+  margin-top: 15%;
+  width: 80%;
+  padding: 40px;
+  border-radius: 20px;;
+  box-shadow: 2px 2px 15px 2px #5C7AEA;
+  text-align: center;
+  
+}
+.siginPage .otp-card .card-header{
+  padding:auto;
+  align-self: center;
+  background-color: transparent;
+  border:none;
+  border-color: transparent;
+}
+.siginPage .otp-card .card-header h3{
+  color: #14279B;
+}
+
+.siginPage .otp-card .otpbutton{
+  text-align: center;
+  height: 40px;
+  width: 100px;
+  margin:5px;
+  transition: 0.8s ease;
+  background-color: #14279B;
+  color: #E6E6E6;
+  font-size: 14px;
+  border-radius: 2rem;
+  font-weight: bold;
+  border: none;
+
+}
+.siginPage .otp-card .otpbutton:hover{
+ 
+  transition: 0.8s ease;
+  background-color: #E6E6E6;
+  color: #14279B;
+  font-weight: bold;
+  border: 1px solid #14279B;
+}
+
+.siginPage .otp-card .paragraph{
+  color:  #14279B;
+}
+
+.otp-field{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin-right: 5px;
+  border: 2px solid #14279B;
+  margin-bottom: 15px;
+  color: #14279B;
+  font-weight: bolder;
+  font-size: 25px;
+}
+.otp-field:focus {
+  background-color: transparent;
+  border: 3px solid #14279B;
+  outline: 0;
+  box-shadow: none;
+  color: #14279B;
+  font-weight: bolder;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  color: #3D56B2;
+  margin-bottom: 20px;
+}
+
+.dummyClass{
+  display: none;
+  color: #14279B;
+  color: #7ce9f0;
+  color: #5C7AEA;
+  color: #E6E6E6;
+
+}
+/* navbar section */
+
+nav{
+  opacity: 0.5;
+  display: contents;
+}
+.navbar-collapse {
+  /* display: flex !important;
+  flex-basis: auto; */
+  /* justify-content: center; */
+  
+  /* font-size: 11px; */
+}
+.navbar-expand-lg .navbar-collapse button{
+    font-size: 28px;
+    background-color: rgb(198, 238, 252);
+    opacity: 1;
+    font-weight: 700;
+    padding: 10px;
+    padding-bottom: 50px;
+}
+.navbar-expand-lg .navbar-collapse button:hover{
+  background-color:#14279B;
+  color: white;
+}

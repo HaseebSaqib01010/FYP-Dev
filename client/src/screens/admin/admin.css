@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+.mainBody{
+  background-color: #E6E6E6;
+}
+.mainBody .approvaltable td .seePost{
+  color:#14279B !important;
+  text-decoration: underline;
+}
+
+.mainBody .approvaltable td .seePost:hover{
+  color:#3D56B2 !important;
+  
+}
+.button, .card-text, card-title{
+  font-family: 'Open Sans', sans-serif;
+}
+.container{
+  padding: 60px;
+}
+.pro-sidebar .masaail{
+  margin: auto;
+  padding-left: 60px;
+  padding-top:10px;
+}
+.headingM{
+  color:#E6E6E6;
+}
+.sidebarbox{
+  background-color: #3D56B2;
+}
+.sidebarmenu{
+  background-color:#3D56B2;
+}
+
+
+.admin-card{
+  width: 20rem;
+  border-top-right-radius: 10px 10px;
+  border-top-left-radius: 50px 50px;
+  border-bottom-left-radius: 5px 5px;
+  border-bottom-right-radius: 50px 50px;
+  box-shadow: 2px 2px 15px 2px #5C7AEA;
+}
+
+.img{
+   border-top-right-radius: 5px 5px;
+  border-top-left-radius: 50px 50px;
+  width:128px;
+  height: 128px;;
+}
+
+.admin-card-button{
+  margin-top: 30px;
+  transition: 0.8s ease;
+  background-color: #14279B;
+  color: #E6E6E6;
+  font-size: 14px;
+  border-radius: 2rem;
+  border: none;
+
+}
+
+.myP{
+  height: 100px;
+}
+.admin-card-button:hover{
+  transition: 0.8s ease;
+  border:1px;
+  border-color: #3D56B2;
+  background-color: #cfcfcf;
+  color: #3D56B2;
+  font-size: 14px;
+}
+.para{
+  color: #E6E6E6 !important;
+  padding-top: 10px;;
+}
+
+.dummyClass{
+  display: none;
+  color: #14279B;
+  color: #3D56B2;
+  color: #5C7AEA;
+  color: #E6E6E6;
+
+}
+
+
+/* approvals */
+
+.approvaltable{
+  background-color: #ffffff;
+}
+.approvaltable td{
+  color: #14279B;
+}
+
