@@ -10,14 +10,44 @@ const { log } = require("handlebars");
 
 const User = mongoose.model("User");
 router.post('/signup', (req, res, next) => {
+ 
+  // const user = new User(req.body.user);
+  // user.setPassword(req.body.user.password);
+  // user.save((err, user)=>{
+  //   if(err){
+  //     return next(new BadRequestResponse(err));
+  //   }
+
+  //   console.log(" userrrrr >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+  //   res.json(new OkResponse("User created"));
+  // });
+
+
+ // Check if a user with the same username or email already exists
+ User.findOne({ email: req.body.user.email }, (err, existingUser) => {
+  if (err) {
+    return next(new BadRequestResponse(err));
+  }
+
+  if (existingUser) {
+    // User with the same email already exists; return an error message
+    console.log("User with this email already exists>>>")
+    return res.status(400).json({ message: 'User with this email already exists' });
+  }
+
+  // If no existing user is found, create and save the new user
   const user = new User(req.body.user);
   user.setPassword(req.body.user.password);
-  user.save((err, user)=>{
-    if(err){
+  user.save((err, savedUser) => {
+    if (err) {
       return next(new BadRequestResponse(err));
     }
-    res.json(new OkResponse("User created"));
+
+    console.log("User created");
+    res.json({ message: 'User created' });
   });
+});
+
 })
 
 router.post("/login", (req, res, next) => {
@@ -38,6 +68,7 @@ router.post("/login", (req, res, next) => {
 })
 
 router.put('/profile', auth.required, auth.user, (req, res, next) => {
+
   req.user.fullName = req.body.user.fullName || req.user.fullName;
   req.user.state = req.body.user.state || req.user.state;
   req.user.city = req.body.user.city || req.user.city;
@@ -53,6 +84,7 @@ router.put('/profile', auth.required, auth.user, (req, res, next) => {
 
 router.get('/me', auth.required, auth.user, (req, res, next) => {
   try{
+   
     User.findOne({by: req.user._id}).exec(
       (err, user) => {
         if (err) return next(err);

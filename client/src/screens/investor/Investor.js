@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import http from "../../axios";
 
 import SubServices from "./SubServices"
+import UserProfileShoe from "./components/UserProfileShoe";
 
 
 
@@ -91,6 +92,7 @@ const Investor = (params) => {
             <Route exact path="/investor/createpoll" component={CreatePoll} />
             <Route exact path="/investor/polls" component={MyPolls} />
             <Route exact path="/investor/profile" component={Profile} />
+            <Route exact path="/investor/userprofile/:id" component={UserProfileShoe} />
           </Switch>
         </div>
 

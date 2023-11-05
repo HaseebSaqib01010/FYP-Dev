@@ -8,29 +8,35 @@ const SignUp = () => {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const history = useHistory();
-  const onSubmit = () => {
-
+  const onSubmit = (e) => {
+    e.preventDefault();
 
     if (user.password !== user.confirmPassword) {
       setErrorMessage("Password does not match");
-      return;
+      setTimeout(() => {
+        setErrorMessage(null);
+      }, 1000);
+      // console.log("no ,match")
+      // return;
+    }else{
+      // setErrorMessage("");
+        console.log("match")
+      console.log(user);
+  
+      http.post("/user/signup", { user: user }).then((res) => {
+          history.push("/auth");
+        })
+        .catch((err) => {
+          if (err.response && err.response.data && err.response.data.message) {
+            setErrorMessage(err.response.data.message);
+          } else {
+            console.error("Unexpected error format:", err);
+            // Handle the error appropriately
+          }
+          
+        });
+
     }
-    setErrorMessage("");
-
-    console.log(user);
-
-    http.post("/user/signup", { user: user }).then((res) => {
-        history.push("/auth");
-      })
-      .catch((err) => {
-        if (err.response && err.response.data && err.response.data.message) {
-          setErrorMessage(err.response.data.message);
-        } else {
-          console.error("Unexpected error format:", err);
-          // Handle the error appropriately
-        }
-        
-      });
   };
   
   const emailValidation = ()=> {
@@ -63,12 +69,12 @@ const SignUp = () => {
                   <div className="card-header">
                     <h3>Sign Up</h3>
                   </div>
-                  <form>
+                  <form onSubmit={(e)=>onSubmit(e)}>
                     <div className="row">
                       <div className="col-md-6">
-                        <div class="form-check form-check-inline">
+                        <div className="form-check form-check-inline">
                           <input
-                            class="form-check-input"
+                            className="form-check-input"
                             type="radio"
                             name="inlineRadioOptions"
                             id="role"
@@ -76,18 +82,18 @@ const SignUp = () => {
                             onChange={(e) =>
                               setUser({ ...user, role: +e.target.value })
                             }
-                            required
+                            // required
                           />
-                          <label class="form-check-label" for="role">
+                          <label className="form-check-label" htmlFor="role">
                             Investor
                           </label>
                         </div>
                       </div>
 
                       <div className="col-md-6">
-                        <div class="form-check form-check-inline">
+                        <div className="form-check form-check-inline">
                           <input
-                            class="form-check-input"
+                            className="form-check-input"
                             type="radio"
                             name="inlineRadioOptions"
                             id="role"
@@ -95,9 +101,9 @@ const SignUp = () => {
                             onChange={(e) =>
                               setUser({ ...user, role: +e.target.value })
                             }
-                            required
+                            // required
                           />
-                          <label class="form-check-label" for="role">
+                          <label className="form-check-label" htmlFor="role">
                             Reviewer
                           </label>
                         </div>
@@ -258,15 +264,15 @@ const SignUp = () => {
                     <div className="row "></div>
                     <div className="row">
                       <div className="col-md-12 text-danger text-center">
-                        {errorMessage}
+                        {errorMessage &&  errorMessage}
                       </div>
 
                       <div className="col-md-12">
                         <div className="buttonSignup">
                           <button
-                            type="button"
+                            type="submit"
                             className="btn signupbtn"
-                            onClick={onSubmit}
+                            // onClick={onSubmit}
                           >
                             Sign Up
                           </button>

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../assets/img/logo.png";
+import logo from "../../../assets/img/invest-logo.jpg";
 import img from "../../../assets/img/invest.jpg";
 import "bootstrap/dist/css/bootstrap.css";
 import Container from "react-bootstrap/Container";

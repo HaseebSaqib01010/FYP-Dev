@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import logo from "../../assets/img/logo.png";
 import http from "../../axios";
 import SubServices from "./SubServices"
+import UserProfileShoe from "./components/UserProfileShoe";
+import Allpost from "./components/Allpost";
 
 const Reviewer = (params) => {
 	const [hot, setHot] = useState([]);
@@ -62,7 +64,14 @@ const Reviewer = (params) => {
 
 					<Link to="/reviewer/">
 						<button className="btn post-btn">
-							<i class="fas fa-home"></i>Timeline
+							<i class="fas fa-home"></i>Polls 
+							{/*Polls is  Timeline */}
+						</button>
+					</Link>
+					<Link to="/reviewer/timeline">
+						<button className="btn post-btn">
+							<i class="fas fa-home"></i>Timeline 
+							{/*Polls is  Timeline */}
 						</button>
 					</Link>
 
@@ -92,6 +101,9 @@ const Reviewer = (params) => {
 						<Route exact path="/reviewer/createpost" component={CreatePost} />
 						<Route exact path="/reviewer/myposts" component={MyPosts} />
 						<Route exact path="/reviewer/profile" component={Profile} />
+						<Route exact path="/reviewer/userprofile/:id" component={UserProfileShoe} />
+						<Route exact path="/reviewer/timeline" component={Allpost} />
+						
 					</Switch>
 				</div>
 				{<div className="col-md-3">

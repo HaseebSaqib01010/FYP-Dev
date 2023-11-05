@@ -1,0 +1,16 @@
+.support-contaienr{position: relative;text-align: end;}
+.support-contaienr h5{display: inline-block; cursor: pointer; padding: 10px 0;}
+.support-contaienr .support-list-wrapper {display: none;text-align: start;
+    position: absolute;
+    top: calc(100% - 6px);
+    right: 0;
+    z-index: 3;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 0.35rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.support-contaienr h5:hover + .support-list-wrapper {
+    display: block;
+}   

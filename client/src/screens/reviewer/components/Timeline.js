@@ -2,12 +2,17 @@ import React, { useEffect, useState } from "react";
 import http from "../../../axios";
 import Poll from "react-polls";
 import constants from "../../../constants";
+import { useHistory } from "react-router-dom";
 
 const pollQuestion = "Choose between these?";
 
 const Timeline = () => {
-  const [posts, setPosts] = useState([]);
 
+  // this is polls
+
+
+  const [posts, setPosts] = useState([]);
+  const history = useHistory();
   useEffect(() => {
     http.get("/poll/get/all").then((res) => {
       setPosts(res.data.data);
@@ -19,16 +24,37 @@ const Timeline = () => {
     { option: "React", votes: 8 },
     { option: "Angular", votes: 2 },
   ]);
+  
   const likePost = (id, index) => {
     http.post("/post/support/" + id).then((res) => {
       let newPosts = [...posts];
       newPosts[index].isSupported = !newPosts[index].isSupported;
       newPosts[index].supportCount = newPosts[index].isSupported ? newPosts[index].supportCount + 1: newPosts[index].supportCount - 1;
       setPosts(newPosts);
+      console.log(newPosts)
     })
   }
 
-  const handleVote = (voteAnswer) => {};
+  const handleVote = (voteAnswer) => {
+
+  };
+
+
+  // const likePost = (id, index) => {
+  //   http.post("/post/support/" + id).then((res) => {
+  //     let newPosts = [...posts];
+  //     newPosts[index].isSupported = !newPosts[index].isSupported;
+  //     newPosts[index].supportCount = newPosts[index].isSupported ? newPosts[index].supportCount + 1: newPosts[index].supportCount - 1;
+  //     setPosts(newPosts);
+  //   })
+  // }
+
+  const handleNavigate=(by)=>{
+    console.log(by)
+    localStorage.setItem('postuser',JSON.stringify(by));
+    history.push(`/reviewer/userprofile/:${by._id}`)
+  } 
+
 
   return (
     <>
@@ -44,7 +70,7 @@ const Timeline = () => {
             </div>
           </div>
           <div className="col-md-4">
-            <h4>{post.by.firstName}</h4>
+            <h4 style={{'cursor':'pointer'}} onClick={()=>handleNavigate(post.by)}>{post.by.firstName}</h4>
             <h5>{post.by.city}, {post.by.country}</h5>
           </div>
           <div className="col-md-6">

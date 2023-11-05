@@ -63,7 +63,7 @@ const CreatePoll = () => {
                 ))}
               </div>
               <div className="form-group"></div>
-              <input
+              <textarea
                 className="mt-3 tags-input pollsTitleText"
                 value={input}
                 placeholder="Write Poll Name and Press Enter"
