@@ -31,29 +31,12 @@ const Reviewer = (params) => {
 	return (
 		<>
 			<NavbarComponent />
-			<div style={{marginTop:"-20px"}}>
+			<div className="main-container">
 
 				
-					{/* <div className="nav-bar d-flex align-items-center justify-content-between">
-						<Link to={'/reviewer'} className="navbar-brand">
-							<img src={logo} alt="logo" className="logo"></img>
-						</Link>
-						<SubServices />
-
-
-
-
-					</div>
-				 */}
-
-
-				<div className="row mt-4" >
-
-					<div className="col-md-3 d-flex flex-column right-sec" style={{backgroundColor:"azure", paddingTop: "6%",
-    width: "25%"
-}}>
-
-						<Link to="/reviewer/createpost">
+			 <aside className="sidebar right-sec trend-container">
+        <h2>Menu</h2>
+		<Link to="/reviewer/createpost">
 							<button className="btn post-btn">
 								<i class="fas fa-pen-square"></i>Create Post
 							</button>
@@ -89,10 +72,10 @@ const Reviewer = (params) => {
 								<i class="fas fa-star"></i>Premium Acc
 							</button>
 						</Link>
+        </aside>
 
-					</div>
-
-					<div className="col">
+		<main className="content">
+          <div className="content-scroll-container">
 					<Switch>
 						<Route exact path="/reviewer" component={Timeline} />
 						<Route exact path="/reviewer/createpost" component={CreatePost} />
@@ -103,42 +86,19 @@ const Reviewer = (params) => {
 						<Route exact path="/reviewer/timeline" component={Allpost} />
 
 					</Switch>
-				</div>
-					{<div className="col-md-3 trend-container" style={{overflowY:"scroll"}}>
-						<h2>Trending Posts</h2>
-						{
-							hot.map((item, index) => {
-								return (
-							
-									<div className="hot-topic">
-										<p>{
-											item.body
-										}</p>
-										
-									</div>
-								
-
-								
-								);
-							})
-						}
-						{/* <div className="col-md-3 trend-container"><br /><br />
-							<h4 className="btn post-btn">Recommendations</h4>
-							{
-								hot.map((item, index) => {
-									return (
-										<div className="hot-topic">
-											<p>{
-												item.body
-											}</p>
-										</div>
-									);
-								})
-							}
-						</div> */}
-					</div>
-					}
-				</div>
+		   </div>
+		</main>
+		<aside className="sidebar trend-container">
+        <h2>Trending Posts</h2>
+          <div className="trending-posts ">
+      
+            {hot.map((item, index) => (
+              <div className="hot-topic" key={index}>
+                <p>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </aside>
 			</div>
 			<Footer />
 		</>

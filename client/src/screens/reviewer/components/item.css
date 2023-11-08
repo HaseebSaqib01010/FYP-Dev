@@ -1,0 +1,346 @@
+/* Custom CSS in your stylesheet (investor.css) */
+.custom-create-post {
+    margin: 20px; /* Adjust the margin as needed */
+  }
+  
+  .custom-create {
+    background-color: #f5f5f5; /* Background color */
+    padding: 10px; /* Adjust the padding as needed */
+    border: 1px solid #ccc; /* Border styles */
+    border-radius: 5px; /* Border radius */
+    width: 800PX;
+  }
+  
+  .custom-form-group {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+  
+  .custom-tags-input {
+    width: 100%;
+    padding: 10px; /* Adjust the padding as needed */
+    border: 1px solid #ccc; /* Border styles */
+    border-radius: 5px; /* Border radius */
+  }
+  
+  .custom-tags {
+    /* Your custom styles for tags */
+  }
+  
+  .custom-tag {
+    background-color: #007bff; /* Background color for tags */
+    color: #fff; /* Text color for tags */
+    padding: 5px 10px; /* Adjust the padding as needed */
+    border-radius: 5px; /* Border radius for tags */
+    margin-right: 5px; /* Adjust the margin as needed */
+    cursor: pointer;
+    margin-top: 20PX;
+  }
+  
+  .custom-form-grouping {
+    /* Your custom styles for form-grouping */
+  }
+  
+  .custom-polls-title-text {
+    width: 100%;
+    height: 100px; /* Adjust the height as needed */
+    padding: 10px; /* Adjust the padding as needed */
+    border: 1px solid #ccc; /* Border styles */
+    border-radius: 5px; /* Border radius */
+  }
+  
+  .custom-button-container {
+    text-align: right; /* Adjust the alignment as needed */
+  }
+  
+  .custom-button {
+    background-color:whitesmoke; /* Button background color */
+    color:black; /* Button text color */
+    padding: 10px 20px; /* Adjust the padding as needed */
+    border: none;
+    border-radius: 5px;
+    margin-top: 20PX;
+    cursor: pointer;
+  }
+  .custom-form-group textarea{
+    height: 150px;
+
+  }
+  .custom-button:hover {
+    background-color:#007bff;
+    color: #f5f5f5; /* Button background color on hover */
+  }
+/* // CARD   */
+.card {
+    width: 98%;
+    height: 380px;
+    background-color:#0056b3;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  
+  .card h2 {
+    z-index: 1;
+    color: white;
+    font-size: 2em;
+  }
+  
+  /* .card::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+  } */
+  
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    background: #07182E;
+    
+    border-radius: 15px;
+  }  
+  /* .card:hover:before {
+    background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
+    animation: rotBGimg 3.5s linear infinite;
+  } */
+  
+  /* Define custom CSS for the components */
+  .custom-post {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+  .custom-profile-img {
+    float: left;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .post-desc p{
+    font-size: 22px;
+    color: #0056b3;
+    text-align: justify;
+  }
+  .custom-profile-img img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  .custom-info h6 {
+    cursor: pointer;
+    font-weight: 900;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .custom-content p {
+    margin: 10px 0;
+    text-align: justify;
+    font: bold;
+    font-weight: 500;
+  }
+  
+  .custom-carousel {
+    /* Add your Carousel CSS styles here */
+  }
+  
+  .custom-actions i {
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 22px;
+  }
+  
+  .custom-support h5 {
+    text-align: right;
+  }
+  
+  .paragrapgh {
+    font-style: italic;
+    font-size: 22px;
+    color: #0056b3;
+    text-align: justify;
+  }
+  .containerr {
+    max-width: 80%;
+    background: #F8F9FD;
+    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);
+    border-radius: 40px;
+    padding: 25px 35px;
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+    margin: 20px auto;
+    height: 100vh;
+  }
+  
+  .heading {
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    color: rgb(16, 137, 211);
+  }
+  
+  .prof-form {
+    margin-top: 20px;
+  }
+  
+  .prof-form input {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: #cff0ff 0px 10px 10px -5px;
+    border-inline: 2px solid transparent;
+  }
+  
+  .prof-form input::-moz-placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .prof-form input::placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .prof-form input:focus {
+    outline: none;
+    border-inline: 2px solid #12B1D1;
+  }
+  
+  .prof-form .forgot-password {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  .form .forgot-password a {
+    font-size: 11px;
+    color: #0099ff;
+    text-decoration: none;
+  }
+  
+  .form .login-button {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+    color: white;
+    padding-block: 15px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form .login-button:hover {
+    transform: scale(1.03);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  }
+  
+  .form .login-button:active {
+    transform: scale(0.95);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+  }
+  
+  .social-account-container {
+    margin-top: 25px;
+  }
+  
+  .social-account-container .title {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    color: rgb(170, 170, 170);
+  }
+  
+  .social-account-container .social-accounts {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5px;
+  }
+  
+  .social-account-container .social-accounts .social-button {
+    background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
+    border: 5px solid white;
+    padding: 5px;
+    border-radius: 50%;
+    width: 40px;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .social-account-container .social-accounts .social-button .svg {
+    fill: white;
+    margin: auto;
+  }
+  
+  .social-account-container .social-accounts .social-button:hover {
+    transform: scale(1.2);
+  }
+  
+  .social-account-container .social-accounts .social-button:active {
+    transform: scale(0.9);
+  }
+  
+  .agreement {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .agreement a {
+    text-decoration: none;
+    color: #0099ff;
+    font-size: 9px;
+  }
+  .button {
+    font-size: 18px;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    will-change: box-shadow,transform;
+    background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100% );
+    box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+    padding: 0 2em;
+    border-radius: 0.3em;
+    color: #fff;
+    height: 2.6em;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  
+  .button:hover {
+    box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+    transform: translateY(-0.1em);
+  }
+  
+  .button:active {
+    box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
+    transform: translateY(0em);
+  }

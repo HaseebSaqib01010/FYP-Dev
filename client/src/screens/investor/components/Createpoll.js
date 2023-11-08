@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import http from "../../../axios";
 import { useHistory } from "react-router-dom";
+import "./item.css"
 
 const CreatePoll = () => {
   const [input, setInput] = useState("");
@@ -46,37 +47,39 @@ const CreatePoll = () => {
   }
   return (
     <>
-      <div>
-        <form action="">
-          <div className="col-md-10 create-post">
-            <div className="create mt-4">
-              <div className="form-group">
-                <input
-                  className="mt-3 tags-input pollsTitle"
-                  placeholder="Title"
-                  onChange={(e) => setTitle(e.target.value)}
-                />
-              </div>
-              <div className="mt-2 pollsTags">
-                {tags.map((tag) => (
-                  <span className="tag">{tag.name}</span>
-                ))}
-              </div>
-              <div className="form-grouping"></div>
-              <textarea
-                className="mt-3 tags-input pollsTitleText"
-                value={input}
-                placeholder="Write Poll Name and Press Enter"
-                onKeyDown={onKeyDown}
-                onChange={onChange}
-              />
-            </div>
-            <div className="d-flex justify-content-end">
-              <button className="btn" type="button" onClick={onSubmit}>Post</button>
-            </div>
-          </div>
-        </form>
+     <div>
+  <form action="" className="card">
+    <div className="custom-create-post">
+      <div className="custom-create mt-4">
+        <div className="custom-form-group">
+        <p style={{backgroundColor:"#204F8C", color:"white",borderRadius:"12px"}}>Create Poll</p>
+          <textarea
+            className="custom-tags-input custom-polls-title"
+            placeholder="Write Poll Name"
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div className="custom-tags">
+          {tags.map((tag) => (
+            <span className="custom-tag">{tag.name}</span>
+          ))}
+        </div>
+        <div className="custom-form-grouping"></div>
+        {/* <textarea
+          className="custom-tags-input custom-polls-title-text"
+          value={input}
+          placeholder="Write Poll Name and Press Enter"
+          onKeyDown={onKeyDown}
+          onChange={onChange}
+        /> */}
       </div>
+      <div className="custom-button-container">
+        <button className="custom-button" type="button" onClick={onSubmit}>Post</button>
+      </div>
+    </div>
+  </form>
+</div>
+
     </>
   );
 };

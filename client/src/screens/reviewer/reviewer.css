@@ -12,13 +12,22 @@
   border-radius: 50px;
 }
 .right-sec button{
-  width: 440px;
+  width: 400px;
   padding: 20px;
+  text-align: center;
+  background-color:whitesmoke;
   height: 60px;
+  font-size: 16px;
   margin-top: 20px;
   border-radius: 10px;
 }
+.right-sec button:hover{
+  background-color: #3d56b2;
+  color:white;
+  font: 28px;
+  
 
+}
 .trend-container{
   border-left: 1px solid lightgrey ;
   padding: 20px;

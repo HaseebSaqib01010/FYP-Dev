@@ -26,6 +26,65 @@
 .profile {
   margin-right: 20px;
 }
+/* .right-sec button{
+  width: 400px;
+  padding: 20px;
+  height: 60px;
+  margin-top: 20px;
+  border-radius: 10px;
+} */
+.right-sec button {
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0px 4px 0px #0072ff;
+  transition: all 0.2s ease-in-out;
+}
+
+.right-sec button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 0px #0072ff;
+}
+
+.right-sec button:active {
+  transform: translateY(0px);
+  box-shadow: none;
+  background-image: linear-gradient(to bottom right, #0072ff, #00c6ff);
+}
+
+.right-sec button:before,
+.right-sec button:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.right-sec button:before {
+  top: -3px;
+  left: -3px;
+  border-radius: 40px;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+}
+
+.right-sec button:after {
+  bottom: -3px;
+  right: -3px;
+  border-radius: 40px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+}
+
+
+
 
 .profile i {
   padding-top: 5px;
@@ -37,7 +96,11 @@
   font-size: 20px;
   color: white;
 }
-
+.content-scroll-container {
+  height: 100%; /* You can adjust the height as needed */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+  overflow: hidden;
+}
 .post-btn i {
   margin-right: 10px;
 }
@@ -183,3 +246,58 @@
   border-radius: 50px;
   object-fit: cover;
 }
+/* investor.css */
+
+/* Styles for the main container */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh;
+
+}
+
+/* Styles for the sidebar */
+.sidebar {
+  width: 25%;
+  background-color: azure;
+  padding: 6% 2% 0;
+  height: 100vh;
+}
+
+.custom-link {
+  text-decoration: none;
+}
+
+.custom-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #333;
+}
+
+/* Styles for the main content area */
+.content {
+  width: 50%;
+  padding: 20px;
+  background-color: #f5f5f5;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Styles for the trending posts */
+.trending-posts {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Additional styles can be added as needed */
