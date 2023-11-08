@@ -47,7 +47,7 @@ function App() {
         <PrivateRoute path="/investor" component={Investor} />
         <PrivateRoute path="/reviewer" component={Reviewer} />
         <PrivateRoute path="/chat" component={Chat} />
-        <PrivateRoute path="/admin" component={Admin} />
+        <Route path="/admin" component={Admin} />
         <Route path="/">
           <Redirect to="/auth" />
         </Route>

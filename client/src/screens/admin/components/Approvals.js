@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Approvals = () => {
   return (
-    <div>
+    <div style={{width:"100%"}}>
 
       <div className="main-content mainBody">
           <table className="table table-hover approvaltable">

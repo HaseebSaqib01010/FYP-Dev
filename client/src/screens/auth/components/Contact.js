@@ -1,77 +1,71 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../../../assets/img/logo.png";
-import img from "../../../assets/img/invest.jpg";
-import danyal from "../../../assets/img/danyal.jpg"
-import raahim from "../../../assets/img/raahim.jpg"
-import abdullah from "../../../assets/img/abdullah.jpg"
-import "../auth.css";
+import NavbarComponent from "./Navbar";
+import "./contact.css"
+import Footer from "./Footer";
 
-const Contact = () => {
-    return (
-        <>
-            <div className="background">
-                <div className="row siginPage homePage">
-                    <nav className="navbar navbar-expand-lg navbar-light ">
-                        <div className="navbar d-flex align-items-center col-lg-9">
-                            <Link to={''} className="navbar-brand">
-                                <img src={logo} alt="logo" className="logo"></img>
-                            </Link>
-                        </div>
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className='row'>
-                            <div className='col-sm-12 col-md-4 col-lg-9 '>
-                                <ul className="navbar-nav my-2 my-lg-0">
-                                    <li className="nav-item">
-                                        <div className="homeButton">
-                                            <Link type="submit" to="/auth">
-                                                <button type="submit" className="btn homebutton">
-                                                    Home
-                                                </button>
-                                            </Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="homeButton">
-                                            <Link type="submit" to="/auth/About">
-                                                <button type="submit" className="btn homebutton">
-                                                    About
-                                                </button>
-                                            </Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="homeButton">
-                                            <Link type="submit" to="/auth/contact">
-                                                <button type="submit" className="btn homebutton">
-                                                    Contact
-                                                </button>
-                                            </Link>
-                                        </div>
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </div>
-
-                    </nav>
-                    <div className="container-fluid about-section" style={{ backgroundColor: "#7ce9f0" }}>
-
-                        <h1>Contact Us</h1>
-
-                        <p style={{ color: "black" }}>A platform that primarily deals in investment opportunities is called Investation.
-                            The major goals of this project are to link users and investors, supply market gaps, provide investment plans, give users a platform to post their concerns in the non-government sector, and provide premium plans based on the unique needs of investors. This website's primary focus is finding solutions to the issues that the general public faces. The public will have a location to draw attention to the problems and post the demands in order to have the investors satisfy them</p>
-
-                    </div>
-
-
+const ContactUs = () => {
+  return (
+    <div className="contact-us">
+      <NavbarComponent />
+      <section className="footer_get_touch_outer">
+      <div className="container">
+        <div className="footer_get_touch_inner grid-70-30">
+          <div className="colmun-70 get_form">
+            <div className="get_form_inner">
+              <div className="get_form_inner_text">
+                <h3>Get In Touch</h3>
+              </div>
+              <form action="#">
+                <div className="grid-50-50">
+                  <input type="text" placeholder="First Name" />
+                  <input type="text" placeholder="Last Name" />
+                  <input type="email" placeholder="Email" />
+                  <input type="tel" placeholder="Phone/Skype" />
                 </div>
+                <div className="grid-full">
+                  <textarea placeholder="About Your Project" cols="30" rows="10"></textarea>
+                  <input type="submit" value="Submit" />
+                </div>
+              </form>
             </div>
-
-        </>
-    );
+          </div>
+          <div className="colmun-30 get_say_form">
+            <h5>Say Hi!</h5>
+            <ul className="get_say_info_sec">
+              <li>
+                <i className="fa fa-envelope"></i>
+                <a href="mailto:">info@investation.com</a>
+              </li>
+              <li>
+                <i className="fa fa-whatsapp"></i>
+                <a href="tel:">+92 3036586126</a>
+              </li>
+              <li>
+                <i className="fa fa-skype"></i>
+                <a href="#">Investation</a>
+              </li>
+            </ul>
+            <ul className="get_say_social-icn">
+              <li>
+                <a href="#"><i className="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i className="fa fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i className="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i className="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Footer/>
+    </div>
+  );
 };
 
-export default Contact;
+export default ContactUs;

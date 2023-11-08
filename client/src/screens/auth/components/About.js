@@ -1,108 +1,87 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/img/logo.png";
-import img from "../../../assets/img/invest1.jpg";
-import "../auth.css";
-import danyal from "../../../assets/img/danyal.jpg"
-import raahim from "../../../assets/img/raahim.jpg"
-import abdullah from "../../../assets/img/abdullah.jpg"
+import ifrah from "../../../assets/img/ifrah.png";
+import Haseeb from "../../../assets/img/haseeb.jpg";
+import Danyal from "../../../assets/img/danyal.png";
+import Footer from "./Footer";
+
+import NavbarComponent from "./Navbar"; 
+
+import "./AboutUs.css"
 
 const About = () => {
+
+    
     return (
-        <>
-            <div className="background">
-                <div className="row siginPage homePage">
-                    <nav className="navbar navbar-expand-lg navbar-light ">
-                        <div className="navbar d-flex align-items-center col-lg-9">
-                            <Link to={''} className="navbar-brand">
-                                <img src={logo} alt="logo" className="logo"></img>
-                            </Link>
-                        </div>
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className='row'>
-                            <div className='col-sm-12 col-md-4 col-lg-9 '>
-                                <ul className="navbar-nav my-2 my-lg-0">
-                                    <li className="nav-item">
-                                        <div className="homeButton">
-                                            <Link type="submit" to="/auth">
-                                                <button type="submit" className="btn homebutton">
-                                                    Home
-                                                </button>
-                                            </Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="homeButton">
-                                            <Link type="submit" to="/auth/about">
-                                                <button type="submit" className="btn homebutton">
-                                                    About
-                                                </button>
-                                            </Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="homeButton">
-                                            <Link type="submit" to="/auth/contact">
-                                                <button type="submit" className="btn homebutton">
-                                                    Contact
-                                                </button>
-                                            </Link>
-                                        </div>
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </nav>
-                    <div className="container-fluid about-section" style={{ backgroundColor: "#7ce9f0" }}>
-
-                        <h1>About Us</h1>
-                        
-                        <p style={{ color: "black" }}>A platform that primarily deals in investment opportunities is called Investation.
-The major goals of this project are to link users and investors, supply market gaps, provide investment plans, give users a platform to post their concerns in the non-government sector, and provide premium plans based on the unique needs of investors. This website's primary focus is finding solutions to the issues that the general public faces. The public will have a location to draw attention to the problems and post the demands in order to have the investors satisfy them</p>
-
+        <div className="about-us">
+            <NavbarComponent /> {/* Include your Navbar here */}
+            <div className="about-content">
+            <div className="about-content-inner">
+                <h1>About Us</h1>
+                <p>
+                    Welcome to Investation, your gateway to the world of investment opportunities and solutions. We are committed to connecting users and investors, bridging market gaps, and offering tailored investment plans. Our mission is to empower users to voice their concerns in the non-government sector while providing premium investment solutions that cater to the unique needs of our valued investors.
+                </p>
+             
+           </div>
+           <h2>What We Do</h2>
+            <ul>
+                <li>
+                    <strong>Connect Users and Investors:</strong> Investation is the bridge that connects individuals seeking investment opportunities with experienced and dedicated investors. We believe in the power of collaboration and partnership to drive economic growth and prosperity.
+                </li>
+                <li>
+                    <strong>Fill Market Gaps:</strong> We identify market gaps and work diligently to provide solutions that benefit both users and investors. Our goal is to create win-win scenarios that drive success and growth.
+                </li>
+                <li>
+                    <strong>Tailored Investment Plans:</strong> We understand that every investor has unique needs and objectives. That's why we offer custom-tailored investment plans to ensure that your financial goals are met.
+                </li>
+                <li>
+                    <strong>Voice of the Public:</strong> Investation gives the general public a voice in the non-government sector. We provide a platform for users to raise concerns, share their ideas, and have their voices heard by potential investors.
+                </li>
+                <li>
+                    <strong>Premium Investment Solutions:</strong> Our premium investment plans are designed to meet the diverse requirements of our investors. Whether you're a seasoned investor or just getting started, Investation has the right solution for you.
+                </li>
+            </ul>
+                <h2>Our Team</h2>
+                <div className="Team">
+                    <div   class="card" style={{ width: '18rem', backgroundColor: 'aliceblue',  border: '1px solid lightGray'}}>
+                    <img class="card-img-top" src={ifrah} alt="Card image cap" />
+                    <div class="card-body">
+                        <h3 class="card-text">Ifrah Ayaz</h3>
+                        <p>SP20-BCS-068</p>
                     </div>
-                    <h2 style={{textAlign:"center", color: "#3D56B2"}}></h2>
-                    <div class="card-deck">
-                        {/* <div className="container-fluid col-lg-9">
-                            <div className="col-lg-12">
-                                <div className="row">
-                                    <div className="card" style={{ width: "20rem" }}>
-                                        <img className="card-img-top cardimage" src={danyal} alt="Card image cap" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Danyal Ahmed</h5>
-                                            <p className="card-text">MERN Stack Developer Currently working on React.js and Node.js <br></br> Member of Investation</p>
-                                            <a href="#" className="btn btn-primary">Contact</a>
-                                        </div>
-                                    </div>
-                                    <div className="card" style={{ width: "20rem" }}>
-                                        <img className="card-img-top cardimage" src={raahim} alt="Card image cap" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Raahim Ahmed Khan</h5>
-                                            <p className="card-text">MERN Stack Developer having Experience of React.js and Frontend Developer<br></br> Member of Investation </p>
-                                            <a href="#" className="btn btn-primary">Contact</a>
-                                        </div>
-                                    </div>
-                                    <div className="card" style={{ width: "20rem" }}>
-                                        <img className="card-img-top cardimage" src={abdullah} alt="Card image cap" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Muhammad Abdullah Sattar</h5>
-                                            <p className="card-text">MERN Stack Developer having Experience of React.js and good content writer<br></br> Member of Investation</p>
-                                            <a href="#" className="btn btn-primary">Contact</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
+                </div>
+                <div class="card" style={{ width: '18rem', backgroundColor: 'aliceblue',  border: '1px solid lightGray'}}>
+                    <img class="card-img-top" src={Haseeb} alt="Card image cap" />
+                    <div class="card-body">
+                        <h3 class="card-text">Haseeb Saqib</h3>
+                        <p>SP20-BCS-113</p>
                     </div>
-
+                </div>
+                <div class="card" style={{ width: '18rem', backgroundColor: 'aliceblue',  border: '1px solid lightGray'}}>
+                    <img class="card-img-top" src={Danyal} alt="Card image cap" />
+                    <div class="card-body">
+                        <h3 class="card-text">Daniyal Ahmad</h3>
+                        <p>SP20-BCS-128</p>
+                    </div>
                 </div>
             </div>
-
-        </>
+          <h2>Our Mission</h2>
+                <p>
+                    At Investation, our primary focus is to find innovative solutions to the challenges that the general public faces. We believe that everyone should have a platform to highlight their issues and express their demands, which we then strive to fulfill through our network of dedicated investors.
+                </p>
+            <h2>Join Us in Shaping the Future</h2>
+            <p>
+                We invite you to be a part of Investation's mission to create a world where individuals can thrive and investors can find new opportunities. Together, we can build a brighter future and create innovative solutions to the challenges of our time.
+            </p>
+            <h2>Contact Us</h2>
+            <p>
+                Have questions or want to learn more about Investation? Feel free to <Link to="/contact">contact us</Link> today.
+            </p>
+        </div>
+        <Footer/>
+        </div>
     );
 };
+
 
 export default About;

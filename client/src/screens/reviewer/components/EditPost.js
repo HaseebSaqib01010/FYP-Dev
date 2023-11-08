@@ -1,18 +1,23 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import http from "../../../axios";
 import { useHistory } from "react-router-dom";
-import "./index.css"
-const CreatePost = () => {
+import axios from "axios";
+import { Carousel } from "react-responsive-carousel";
+import constants from "../../../constants";
 
+const EditPost = (props) => {
+  const postId = props.match.params.id;
   const history = useHistory();
 
   const inputFile = useRef(null);
+  const [Images, setImages] = useState([]);
   const [files, setFiles] = useState([]);
   const [body, setBody] = useState("");
 
   const onFileClick = () => {
     inputFile.current.click();
   };
+  
 
   const onFileChange = (e) => {
     let formdata = new FormData();
@@ -47,14 +52,42 @@ const CreatePost = () => {
     });
   }
 
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const response = await http.get(`/post/get/${postId}`);
+
+        setBody(response.data.data.body);
+        setImages(response.data.data.images)
+      } catch (err) {
+
+      }
+    };
+
+    fetchPost();
+  }, [props.match.params.postId]);
+  const handleUpdate = () => {
+    http.put(`/post/update/${postId}`, { body: body })
+      .then(response => {
+        alert('successfully updated')
+      })
+      .catch(err => {
+        // setError('Failed to update the post');
+      });
+  };
+
+
   return (
     <>
       <div className="col-md-12">
         <div className="col-md-8 create-post">
+          <div className="d-flex justify-content-end">
+            <button className="btn" type="button" onClick={handleUpdate}>update</button>
+          </div>
           <form>
             <div className="create mt-8">
-              <div className="text-container">
-                <textarea placeholder="Write Your Observation to attract a Business Investment" onChange={(e) => setBody(e.target.value)}></textarea>
+              <div className="form-group">
+                <textarea placeholder="Write Your Observation to attract a Business Investment" value={body} onChange={(e) => setBody(e.target.value)}></textarea>
               </div>
               <div className="col-md-12 ms-2">
                 {
@@ -63,10 +96,8 @@ const CreatePost = () => {
                   })
                 }
               </div>
-              <div className="text-tools">
-
-                <div className="image-div">
-                <p>Add Image</p>
+              <div>
+                <div className="form-group">
                   <i class="fas fa-paperclip" onClick={onFileClick}></i>
                   <input
                     type="file"
@@ -76,12 +107,20 @@ const CreatePost = () => {
                     style={{ display: "none" }}
                   />
                 </div>
-                <div className="d-flex justify-content-end">
-              <button className="create-btn"type="button" onClick={onSubmit}>Post</button>
-            </div>
               </div>
             </div>
-                
+            <Carousel className="carousel">
+              {
+                Images.map((image, index) => {
+                  return (
+                    <div key={index}>
+                      <img src={constants.file_url + '/' + image.url} />
+                    </div>
+                  )
+                })
+              }
+            </Carousel>
+
           </form>
         </div>
       </div>
@@ -89,4 +128,4 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default EditPost;

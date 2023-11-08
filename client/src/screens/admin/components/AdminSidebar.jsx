@@ -12,85 +12,65 @@ import { FaQuestionCircle, FaMoneyBillWave } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import "../../react-pro-sidebar.css";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import "../admin.css"
 
 const AdminSidebar = () => {
   const history = useHistory();
-  // const navigate =useNavigate();
+
   const logout = () => {
-		window.localStorage.removeItem("token");
-		window.localStorage.removeItem("user");
-		window.location.reload();
-    // navigate("/auth");
-		history.push("/auth");
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("user");
+    window.location.reload();
+    history.push("/auth");
+  };
 
-	}
   return (
-    <ProSidebar className="pro-sidebar">
-      <SidebarHeader className="row sidebarbox">
-        <div className="col-md-12">
-          <div className="container-fluid masaail">
-            <h3 className="headingM">Admin</h3>
-          </div>
-        </div>
-      </SidebarHeader>
+    <div className="admin-sidebar" style={{width:"1"}}>
+      <div className="sidebar-header">
+        <h3 className="headingM">Admin</h3>
+      </div>
 
-      <SidebarContent className="sidebarbox">
-        <Menu className="sideicon">
-          <MenuItem
-            className="sidebarmenu"
-            active={window.location.pathname === "/admin/"}
-            icon={<MdHome />}
+      <div className="sidebar-content">
+        <ul className="menu">
+          <li
+            className={`menu-item ${window.location.pathname === "/admin/" ? "active" : ""}`}
           >
-            Dashboard
-            <Link to="/admin/" />
-          </MenuItem>
-          <MenuItem
-            active={window.location.pathname === "/admin/approvals"}
-            icon={<MdPending />}
+            <MdHome />
+            <Link to="/admin/">Dashboard</Link>
+          </li>
+          <li
+            className={`menu-item ${window.location.pathname === "/admin/approvals" ? "active" : ""}`}
           >
-            Approvals
-            <Link to="/admin/approvals" />
-          </MenuItem>
-          <MenuItem
-            active={window.location.pathname === "/admin/reviewers"}
-            icon={<MdReviews />}
+            <MdPending />
+            <Link to="/admin/approvals">Approvals</Link>
+          </li>
+          <li
+            className={`menu-item ${window.location.pathname === "/admin/reviewers" ? "active" : ""}`}
           >
-            Reviewers
-            <Link to="/admin/reviewers" />
-          </MenuItem>
+            <MdReviews />
+            <Link to="/admin/reviewers">Reviewers</Link>
+          </li>
+          <li
+            className={`menu-item ${window.location.pathname === "/admin/investors" ? "active" : ""}`}
+          >
+            <FaMoneyBillWave />
+            <Link to="/admin/investors">Investors</Link>
+          </li>
+          <li
+            className={`menu-item ${window.location.pathname === "/admin/queries" ? "active" : ""}`}
+          >
+            <FaQuestionCircle />
+            <Link to="/admin/queries">Queries</Link>
+          </li>
+        </ul>
+      </div>
 
-          <MenuItem
-            active={window.location.pathname === "/admin/investors"}
-            icon={<FaMoneyBillWave />}
-          >
-            Investors
-            <Link to="/admin/investors" />
-          </MenuItem>
-
-          <MenuItem
-            active={window.location.pathname === "/admin/queries"}
-            icon={<FaQuestionCircle />}
-          >
-            Queries
-            <Link to="/admin/queries" />
-          </MenuItem>
-        </Menu>
-      </SidebarContent>
-
-      <SidebarFooter className="sidebar-footer sidebarbox">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="container-fluid">
-              <button onClick={logout}><i class="fa-solid fa-power-off"></i></button>
-              <p className="para">
-                copyrights@2022 <br /> 
-              </p>
-            </div>
-          </div>
-        </div>
-      </SidebarFooter>
-    </ProSidebar>
+      <div className="sidebar-footer">
+        <button onClick={logout}>Logout</button>
+        <p className="para">copyrights@2022</p>
+      </div>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const Queries = () => {
   return (
-    <div>
+    <div style={{height:"100vh", width:"100%"}}>
 
       <div className="main-content overflow-auto">
         <table className="table table-hover">

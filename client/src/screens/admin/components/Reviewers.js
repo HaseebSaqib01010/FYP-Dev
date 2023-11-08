@@ -4,7 +4,7 @@ const Reviewers = () => {
   return (
     <>
           
-        <div className="main-content overflow-auto">
+        <div className="main-content overflow-auto" style={{width:"100%",height:"1"}}>
         <table className="table table-hover">
             <thead>
               <tr>

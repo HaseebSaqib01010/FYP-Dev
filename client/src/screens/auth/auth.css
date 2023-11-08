@@ -1,8 +1,5 @@
 /* OTP PAGE */
 
-body{
-  background-color: #CCFFFF;
-}
 
 .otp h2 {
   color: #1d1d1d;
@@ -114,7 +111,7 @@ body{
     height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url("../../assets/img/invest.jpg");
+    /* background-image: url("../../assets/img/invest.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
   
@@ -122,13 +119,14 @@ body{
 }
 
 /* sign & signup*/
-.siginPage .sigin-card{
-  margin-top: 30%;
-  width: 80%;
+.siginPage .sigin-card {
+  margin-top: 25%;
+  margin-bottom: 5%;
+  width: 75%;
+  height: 50%;
   padding: 40px;
-  border-radius: 20px;;
+  border-radius: 20px;
   box-shadow: 2px 2px 15px 2px #5C7AEA;
-  
 }
 
 
@@ -162,27 +160,27 @@ body{
 }
 
 .siginPage .sigin-card .card-header h3{
-  color: #14279B;
+  color: #0583F2;
   font-weight: bold;
 }
 
 .siginPage .sigin-card input[type='text'], .siginPage .sigin-card input[type='email'], .siginPage .sigin-card input[type='password']{
   margin-bottom: 7px;
-  border-color:#14279B;
+  border-color:#0583F2;
   border-radius: 2px;
   border-width: 2px;
   padding: 10px;
   width: 100%;
 }
 .siginPage .sigin-card input[type='text']:target, .siginPage .sigin-card input[type='email']:target, .siginPage .sigin-card input[type='password']:target{
-  border:2px solid #14279B;
+  border:2px solid rgb(9, 12, 161);
   text-decoration: none;
 }
 
 .siginPage .sigin-card label{
   font: 1em sans-serif;
   margin: 7px;
-  color: #14279B;
+  color: #0583F2;
   font-weight: bold;
   
 }
@@ -199,7 +197,7 @@ body{
   height: 40px;
   margin-top: 30px;
   transition: 0.8s ease;
-  background-color: #14279B;
+  background-color: #0583F2;
   color: #E6E6E6;
   font-size: 14px;
   border-radius: 2rem;
@@ -210,16 +208,16 @@ body{
  
   transition: 0.8s ease;
   background-color: #E6E6E6;
-  color: #14279B;
+  color: #0583F2;
   font-weight: bold;
-  border: 1px solid #14279B;
+  border: 1px solid #0583F2;
 }
 .siginPage .sigin-card .sigininContent{
   width: 100%;
   text-align: center;
 }
 .siginPage .sigin-card .sigininContent a{
-  color: #14279B;
+  color: #0583F2;
   text-decoration: none;
   padding: auto;
 }
@@ -237,7 +235,7 @@ body{
   text-align: center;
   height: 40px;
   transition: 0.8s ease;
-  background-color: #14279B;
+  background-color: #0583F2;
   color: #E6E6E6;
   font-size: 14px;
   border-radius: 2rem;
@@ -248,9 +246,9 @@ body{
 .homebutton:hover{
   transition: 0.8s ease;
   background-color: #E6E6E6;
-  color: #14279B;
+  color: #0583F2;
   font-weight: bold;
-  border: 1px solid #14279B;
+  border: 1px solid #0583F2;
 }
 .homeContent{
   width: 100%;
@@ -277,7 +275,7 @@ body{
   margin-top: 10px;
   margin-bottom: 10px;
   transition: 0.8s ease;
-  background-color: #14279B;
+  background-color: #0583F2;
   color: #E6E6E6;
   font-size: 14px;
   border-radius: 2rem;
@@ -288,27 +286,27 @@ body{
 .homePage .homeContent button:hover{
   transition: 0.8s ease;
   background-color: #E6E6E6;
-  color: #14279B;
+  color: #0583F2;
   font-weight: bold;
-  border: 1px solid #14279B;
+  border: 1px solid #0583F2;
 }
 
 
 .homeContent a{
-  color: #14279B;
+  color: #0583F2;
   text-decoration: none;
 }
 .space{
   justify-content: space-between;
 }
-.logo{
+/* .logo{
   width: 160px;
   height: 150px;
   border-radius: 0%;
   overflow: hidden;
   margin-top: -6px;
  
-}
+} */
 .homeCircle{
   position: fixed;
     bottom: 0;
@@ -336,7 +334,7 @@ body{
   border-color: transparent;
 }
 .siginPage .otp-card .card-header h3{
-  color: #14279B;
+  color: #0583F2;
 }
 
 .siginPage .otp-card .otpbutton{
@@ -345,7 +343,7 @@ body{
   width: 100px;
   margin:5px;
   transition: 0.8s ease;
-  background-color: #14279B;
+  background-color: #0583F2;
   color: #E6E6E6;
   font-size: 14px;
   border-radius: 2rem;
@@ -357,13 +355,13 @@ body{
  
   transition: 0.8s ease;
   background-color: #E6E6E6;
-  color: #14279B;
+  color: #0583F2;
   font-weight: bold;
-  border: 1px solid #14279B;
+  border: 1px solid #0583F2;
 }
 
 .siginPage .otp-card .paragraph{
-  color:  #14279B;
+  color:  #0583F2;
 }
 
 .otp-field{
@@ -372,18 +370,18 @@ body{
   height: 50px;
   text-align: center;
   margin-right: 5px;
-  border: 2px solid #14279B;
+  border: 2px solid #0583F2;
   margin-bottom: 15px;
-  color: #14279B;
+  color: #0583F2;
   font-weight: bolder;
   font-size: 25px;
 }
 .otp-field:focus {
   background-color: transparent;
-  border: 3px solid #14279B;
+  border: 3px solid #0583F2;
   outline: 0;
   box-shadow: none;
-  color: #14279B;
+  color: #0583F2;
   font-weight: bolder;
 }
 
@@ -396,7 +394,7 @@ body{
 
 .dummyClass{
   display: none;
-  color: #14279B;
+  color: #0583F2;
   color: #7ce9f0;
   color: #5C7AEA;
   color: #E6E6E6;
@@ -424,6 +422,6 @@ nav{
     padding-bottom: 50px;
 }
 .navbar-expand-lg .navbar-collapse button:hover{
-  background-color:#14279B;
+  background-color:#0583F2;
   color: white;
 }

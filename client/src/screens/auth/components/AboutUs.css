@@ -1,0 +1,59 @@
+
+p{
+    font-size: 18px;
+    text-align: center;
+}
+h1,h2,h3{
+  text-align: center;
+  margin-top: 22px;
+}
+li{
+    list-style: none;
+}
+.Team{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+/* about.css */
+
+/* Increase font size and add styling to headings */
+h1, h2 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for paragraphs */
+  p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Style for links */
+  a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s; /* Add transition for smooth color change on hover */
+  }
+  
+  /* Style for links on hover */
+  a:hover {
+    color: #0055a4; /* Change the color on hover */
+  }
+  /* Add animation to card divs */
+.card {
+    width: 18rem;
+    background-color: aliceblue;
+    border: 1px solid lightGray;
+    margin: 10px;
+    transition: transform 0.3s; /* Add a transform transition for animation */
+  }
+  
+  /* Apply a scale animation on hover */
+  .card:hover {
+    transform: scale(1.05);
+  }

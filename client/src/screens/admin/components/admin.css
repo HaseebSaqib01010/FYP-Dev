@@ -1,0 +1,36 @@
+.dashboard-container{
+    width: 100%;
+}
+.main-admin{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    gap: 80px;
+    background-color: azure;
+}
+.main-admin div{
+    height: 50vh;
+
+}
+.admin-card{
+    background-color: aliceblue;
+}
+.admin-card img{
+    padding: 10px;
+}
+.card-body Link {
+    background-color: black;
+
+}
+.center-div Link:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+.approvals{
+    background-color: black;
+    color:"white";
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 12px;
+}

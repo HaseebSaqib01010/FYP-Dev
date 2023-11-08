@@ -2,23 +2,23 @@ let mongoose = require("mongoose");
 let uniqueValidator = require("mongoose-unique-validator");
 const mongoosePaginate = require("mongoose-paginate-v2");
 let PostSchema = new mongoose.Schema(
-	{
+  {
 
     body: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
 
     by: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
 
     images: [
-        {
-          name: String,
-          url: String,
-        }
+      {
+        name: String,
+        url: String,
+      }
     ],
     supportBy: [
       {
@@ -26,8 +26,8 @@ let PostSchema = new mongoose.Schema(
         ref: "User",
       }
     ],
-	},
-	{ timestamps: true }
+  },
+  { timestamps: true }
 );
 
 PostSchema.plugin(uniqueValidator, { message: "is already taken." });
@@ -37,7 +37,7 @@ PostSchema.plugin(mongoosePaginate);
 var autoPopulate = function (next) {
   this.populate("by");
   this.populate("supportBy");
-	next();
+  next();
 };
 
 PostSchema.pre("findOne", autoPopulate);
@@ -45,7 +45,7 @@ PostSchema.pre("find", autoPopulate);
 
 
 PostSchema.methods.toJSON = function () {
-	return {
+  return {
     _id: this._id,
     body: this.body,
     by: this.by,
@@ -53,12 +53,12 @@ PostSchema.methods.toJSON = function () {
     supportBy: this.supportBy,
     supportCount: this.supportBy.length,
     createdAt: this.createdAt,
-	};
+  };
 };
 
 PostSchema.methods.toJSONFor = function (user) {
-  console.log("============" ,user._id, this.supportBy);
-	return {
+  console.log("============", user._id, this.supportBy);
+  return {
     _id: this._id,
     body: this.body,
     by: this.by,
@@ -67,7 +67,7 @@ PostSchema.methods.toJSONFor = function (user) {
     supportCount: this.supportBy.length,
     isSupported: this.supportBy.some(u => u._id.toString() === user._id.toString()),
     createdAt: this.createdAt,
-	};
+  };
 };
 
 

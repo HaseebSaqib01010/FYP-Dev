@@ -3,6 +3,9 @@ import { Link, useHistory } from "react-router-dom";
 import http from "../../../axios";
 import logo from "../../../assets/img/logo.png";
 import "../auth.css";
+import NavbarComponent from "./Navbar";
+import signinImage from"../../../assets/img/loginImage.jpg"
+import Footer from "./Footer";
 //import { ToastContainer, toast } from 'react-toastify';
 //import 'react-toastify/dist/ReactToastify.css';
 const Signin = () => {
@@ -23,15 +26,16 @@ const Signin = () => {
 		})
 	}
 	return (
-		<div className="">
-			<div className="row siginPage">
-				{/* <div className="col-md-4">
-					<div className="nav-bar d-flex align-items-center justify-content-between">
-					<Link to={''} className="navbar-brand">
-                    <img src={logo} alt="logo" className="logo"></img>
-                    </Link>
-			   		</div>
-				</div> */}
+		<>
+			<NavbarComponent/>
+	
+		<div className="" style={{display:"flex",}}>
+		<div className="signInImage">
+                     <img src={signinImage} alt="" srcset="" />
+					</div>
+			<div className="row siginPage" style={{width:"100%"}}>
+			
+				
 
 				<div className="container-fluid sigin-card">
 					<div className="signin-form">
@@ -73,11 +77,13 @@ const Signin = () => {
 							</div>
 						</form>
 					</div>
+					
 				</div>
 			</div>
 			{/* <div className="col-md-4"></div> */}
 		</div>
-
+		<Footer/>
+		</>
 	);
 };
 
