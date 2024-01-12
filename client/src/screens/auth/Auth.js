@@ -1,7 +1,9 @@
 import { Forgot, Home, Signin, OTP, SignUp , About, Contact } from "./components";
 import { Switch, Route } from "react-router-dom";
+import Admin from "../admin/Admin";
 import "./auth.css";
 import Reset from "./components/Reset";
+import AdminLogin from "./adminLogin";
 
 const Auth = () => {
     return (
@@ -16,6 +18,9 @@ const Auth = () => {
                 <Route exact path="/auth/otp" component={OTP} />
                 <Route exact path="/auth/signup" component={SignUp} />
                 <Route exact path="/auth/signin" component={Signin} />
+                <Route exact path="/auth/adminLogin" component={AdminLogin} />
+                <Route exact path="./admin" component={Admin} />
+              
             </Switch>
         </div>
     );

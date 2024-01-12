@@ -15,7 +15,7 @@ function Allpost() {
     const [posts, setPosts] = useState([]);
     const history = useHistory();
     useEffect(() => {
-      http.get("/post/get/all").then((res) => {
+      http.get("/post/approved").then((res) => {
         setPosts(res.data.data);
         console.log(res.data.data)
       });
@@ -57,7 +57,17 @@ function Allpost() {
           </div>
           <div className="row">
             <p>
-              {post.body}
+              <b>Category: </b>{post?.category?.name ? post?.category?.name : "N/A"}
+            </p>
+          </div>
+          <div className="row">
+            <p>
+              <b>Budget: </b>{post?.budget ? post?.budget : "N/A"}
+            </p>
+          </div>
+          <div className="row">
+            <p>
+              <b>Body: </b> {post.body}
             </p>
           </div>
           <div>

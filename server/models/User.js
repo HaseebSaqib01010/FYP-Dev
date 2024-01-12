@@ -7,6 +7,7 @@ const mongoosePaginate = require("mongoose-paginate-v2");
 const otpGenerator = require("otp-generator");
 const faker = require("faker");
 const config = require("../config");
+
 let UserSchema = new mongoose.Schema(
 	{
     firstName:{  type:String,   required:true,},

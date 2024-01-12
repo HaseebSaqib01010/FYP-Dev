@@ -10,6 +10,16 @@ var allowedOrigins = ["http://localhost:4200", "http://localhost:4300", "http://
 require("./server/app-config")(app);
 
 // const http = require('http').Server(app);
+// app.use((req, res, next) => {
+// 	res.header("Access-Control-Allow-Origin", "*");
+// 	res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+// 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+// 	next();
+//   });
+
+// const connectionUrl = "mongodb://127.0.0. :27017/investation";
+const connectionUrl = "mongodb://localhost:27017/";
+mongoose.connect(connectionUrl).then(() => console.log('connected')).catch(err => console.log({err}))
 
 // finally, let's start our server...
 let server = app.listen(process.env.PORT || 8000, function () {
@@ -40,42 +50,42 @@ investSocket.on("connection", (socket) => {
 	});
 });
 
-process.on("SIGTERM", () => {
-	console.info("SIGTERM signal received.");
-	console.log("Closing http server.");
 
-	server.close(() => {
-		console.log("Http server closed.");
-		// boolean means [force], see in mongoose doc
-		mongoose.connection.close(false, () => {
-			console.log("MongoDb connection closed.");
-			process.kill(process.pid, "SIGTERM");
-			process.exit(0);
-		});
-	});
-});
-process.once("SIGUSR2", function () {
-	server.close(() => {
-		console.log("Http server closed.");
-		// boolean means [force], see in mongoose doc
-		mongoose.connection.close(false, () => {
-			console.log("MongoDb connection closed.");
-			process.kill(process.pid, "SIGUSR2");
-			process.exit(0);
-		});
-	});
-});
+// process.on("SIGTERM", () => {
+// 	console.info("SIGTERM signal received.");
+// 	console.log("Closing http server.");
 
-process.on("SIGINT", function () {
-	// this is only called on ctrl+c, not restart
-	server.close(() => {
-		console.log("Http server closed.");
-		// boolean means [force], see in mongoose doc
-		mongoose.connection.close(false, () => {
-			console.log("MongoDb connection closed.");
-			process.kill(process.pid, "SIGINT");
+// 	server.close(() => {
+// 		console.log("Http server closed.");
+// 		// boolean means [force], see in mongoose doc
+// 		mongoose.connection.close(false, () => {
+// 			console.log("MongoDb connection closed.");
+// 			process.kill(process.pid, "SIGTERM");
+// 			process.exit(0);
+// 		});
+// 	});
+// });
+// process.once("SIGUSR2", function () {
+// 	server.close(() => {
+// 		console.log("Http server closed.");
+// 		// boolean means [force], see in mongoose doc
+// 		mongoose.connection.close(false, () => {
+// 			console.log("MongoDb connection closed.");
+// 			process.kill(process.pid, "SIGUSR2");
+// 			process.exit(0);
+// 		});
+// 	});
+// });
 
-			process.exit(0);
-		});
-	});
-});
+// 	// this is only called on ctrl+c, not restart
+// 	server.close(() => {
+// 		console.log("Http server closed.");
+// 		// boolean means [force], see in mongoose doc
+// 		mongoose.connection.close(false, () => {
+// 			console.log("MongoDb connection closed.");
+// 			process.kill(process.pid, "SIGINT");
+
+// 			process.exit(0);
+// 		});
+// 	});
+// });

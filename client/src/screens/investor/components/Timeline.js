@@ -9,14 +9,27 @@ import http from "../../../axios";
 import "../investor.css";
 import "./item.css"
 
-const Timeline = () => {
+const Timeline = ({categoryRef}) => {
   const [posts, setPosts] = useState([]);
   const history = useHistory();
+  // useEffect(() => {
+  //   http.get("/post/get/all").then((res) => {
+  //     setPosts(res.data.data);
+  //   });
+  // }, []);
   useEffect(() => {
-    http.get("/post/get/all").then((res) => {
-      setPosts(res.data.data);
-    });
-  }, []);
+    if(categoryRef === "all") {
+      http.get("/post/get/all").then((res) => {
+        setPosts(res.data.data);
+        console.log('res data all === ', res.data.data);
+      });
+    } else {
+      http.get(`/post/get-by-category/${categoryRef}`).then((res) => {
+        setPosts(res.data.data);
+        console.log('res data cat === ', res.data.data);
+      });
+    } 
+  }, [categoryRef]);
 
   const likePost = (id, index) => {
     http.post("/post/support/" + id).then((res) => {
@@ -61,7 +74,9 @@ const Timeline = () => {
           </div>
           </div>
           <div className="custom-content" style={{marginTop:"20px"}}>
-            <p>{post.body}</p>
+            <p><b>Category: </b> {post?.category?.name}</p>
+            <p><b>Budget: </b> PKR {post?.budget}</p>
+            <p><b>Body: </b> {post.body}</p>
             <Carousel className="carousel">
               {post.images.map((image, index) => (
                 <div key={index}>

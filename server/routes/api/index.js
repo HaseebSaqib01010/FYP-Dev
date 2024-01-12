@@ -5,5 +5,6 @@ router.use("/upload", require("./upload"));
 router.use("/post", require("./post"));
 router.use("/poll", require("./poll"));
 router.use("/chat", require("./chat"));
+router.use("/category", require("./category"));
 
 module.exports = router;

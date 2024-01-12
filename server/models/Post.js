@@ -8,6 +8,13 @@ let PostSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+    },
+    budget: {
+      type: String,
+    },
 
     by: {
       type: mongoose.Schema.Types.ObjectId,
@@ -20,6 +27,7 @@ let PostSchema = new mongoose.Schema(
         url: String,
       }
     ],
+    approved: Boolean,
     supportBy: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -44,31 +52,31 @@ PostSchema.pre("findOne", autoPopulate);
 PostSchema.pre("find", autoPopulate);
 
 
-PostSchema.methods.toJSON = function () {
-  return {
-    _id: this._id,
-    body: this.body,
-    by: this.by,
-    images: this.images,
-    supportBy: this.supportBy,
-    supportCount: this.supportBy.length,
-    createdAt: this.createdAt,
-  };
-};
+// PostSchema.methods.toJSON = function () {
+//   return {
+//     _id: this._id,
+//     body: this.body,
+//     by: this.by,
+//     images: this.images,
+//     supportBy: this.supportBy,
+//     supportCount: this.supportBy.length,
+//     createdAt: this.createdAt,
+//   };
+// };
 
-PostSchema.methods.toJSONFor = function (user) {
-  console.log("============", user._id, this.supportBy);
-  return {
-    _id: this._id,
-    body: this.body,
-    by: this.by,
-    images: this.images,
-    supportBy: this.supportBy,
-    supportCount: this.supportBy.length,
-    isSupported: this.supportBy.some(u => u._id.toString() === user._id.toString()),
-    createdAt: this.createdAt,
-  };
-};
+// PostSchema.methods.toJSONFor = function (user) {
+//   console.log("============", user._id, this.supportBy);
+//   return {
+//     _id: this._id,
+//     body: this.body,
+//     by: this.by,
+//     images: this.images,
+//     supportBy: this.supportBy,
+//     supportCount: this.supportBy.length,
+//     isSupported: this.supportBy.some(u => u._id.toString() === user._id.toString()),
+//     createdAt: this.createdAt,
+//   };
+// };
 
 
 

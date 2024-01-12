@@ -74,6 +74,32 @@ router.post('/signup', async (req, res, next) => {
   }
 });
 
+router.put("/:postId/approve", auth.required, auth.user, async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+
+    // Find the post by ID
+    const post = await Post.findById(postId);
+
+    // Check if the post exists
+    if (!post) {
+      return next(new NotFoundResponse("Post not found"));
+    }
+
+    // Update the approved field to true
+    post.approved = true;
+
+    // Save the updated post
+    const updatedPost = await post.save();
+
+    // Return the updated post in the response
+    res.json(new OkResponse(updatedPost));
+  } catch (err) {
+    console.error(err);
+    next(new InternalServerErrorResponse(err.message || "Internal Server Error"));
+  }
+});
+
 
 router.post("/login", (req, res, next) => {
   passport.authenticate(
@@ -121,6 +147,57 @@ router.get('/me', auth.required, auth.user, (req, res, next) => {
     );
   }
   catch (err) {
+    console.log(err);
+    next(new BadRequestResponse(err));
+  }
+});
+
+router.get('/reviewers', async (req, res, next) => {
+  try {
+    // Check if the user is authenticated (using your auth middleware)
+    // if (!req.user) {
+    //   return res.status(401).json({ error: 'Unauthorized' });
+    // }
+
+    // Find all users with the role of reviewers (assuming 'role' field designates these roles)
+    const reviewers = await User.find({ role: 3 }).exec();
+
+    res.json(reviewers);
+  } catch (err) {
+    console.log(err);
+    next(new BadRequestResponse(err));
+  }
+});
+
+router.get('/investor', async (req, res, next) => {
+  try {
+    // Check if the user is authenticated (using your auth middleware)
+    // if (!req.user) {
+    //   return res.status(401).json({ error: 'Unauthorized' });
+    // }
+
+    // Find all users with the role of reviewers (assuming 'role' field designates these roles)
+    const reviewers = await User.find({ role: 2 }).exec();
+
+    res.json(reviewers);
+  } catch (err) {
+    console.log(err);
+    next(new BadRequestResponse(err));
+  }
+});
+
+router.get('/admin', async (req, res, next) => {
+  try {
+    // Check if the user is authenticated (using your auth middleware)
+    // if (!req.user) {
+    //   return res.status(401).json({ error: 'Unauthorized' });
+    // }
+
+    // Find all users with the role of reviewers (assuming 'role' field designates these roles)
+    const reviewers = await User.find({ role: 1 }).exec();
+
+    res.json(reviewers);
+  } catch (err) {
     console.log(err);
     next(new BadRequestResponse(err));
   }
@@ -180,6 +257,7 @@ router.post('/verify/otp', async (req, res, next) => {
 });
 
 router.post('/change/password', (req, res, next) => {
+
   User.findOne({ email: req.body.email }, (err, user) => {
     if (err) {
       return next(new BadRequestResponse(err));

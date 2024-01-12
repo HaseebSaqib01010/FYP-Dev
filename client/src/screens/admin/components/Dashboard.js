@@ -7,7 +7,7 @@ const Dashboard = () => {
     <>
       <div className="dashboard-container">
         
-        <div className="main-admin">
+        <div className="main-admin" sty>
         <div className=" admin-card">
                         <img
                           src="https://cdn.pixabay.com/photo/2014/04/02/10/12/checkbox-303113_960_720.png"
@@ -35,7 +35,7 @@ const Dashboard = () => {
       
           
            
-               
+{/*                
       <div className="card admin-card">
                       <img
                         src="https://cdn-icons-png.flaticon.com/512/942/942751.png"
@@ -58,7 +58,7 @@ const Dashboard = () => {
                           </Link>
                         </center>
                       </div>
-              </div>
+              </div> */}
           
   </div>
   </div>

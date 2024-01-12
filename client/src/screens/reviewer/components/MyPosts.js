@@ -114,7 +114,7 @@ const MyPosts = () => {
       setPosts(res.data.data);
     });
   }, []);
-  // console.log('posts', posts)
+  console.log('posts', posts)
   const deletePost = async (id) => {
     try {
       const response = await http.delete(`/post/delete/${id}`, {

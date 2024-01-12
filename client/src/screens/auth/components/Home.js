@@ -95,9 +95,9 @@ const Home = () => {
         </div>
 
         <div className="forBusiness">
-          <h3>Are you an Investor?</h3>
+          <h3>Login as an Admin</h3>
 		  
-		  <Link type="submit" to="/auth/signup">
+		  <Link type="submit" to="/auth/adminLogin">
         <li>
             <button type="submit" className="join-button">
               Join

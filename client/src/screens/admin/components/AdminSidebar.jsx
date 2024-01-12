@@ -57,17 +57,21 @@ const AdminSidebar = () => {
             <FaMoneyBillWave />
             <Link to="/admin/investors">Investors</Link>
           </li>
-          <li
+          {/* <li
             className={`menu-item ${window.location.pathname === "/admin/queries" ? "active" : ""}`}
           >
             <FaQuestionCircle />
             <Link to="/admin/queries">Queries</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
 
-      <div className="sidebar-footer">
-        <button onClick={logout}>Logout</button>
+      <div className="sidebar-footer" style={{display:"flex",justifyContent:"center",gap:"20px",flexDirection:"column"}}>
+      <Link type="submit" to="/logout">
+        <li>
+        <button>Logout</button>
+            </li>
+        </Link>
         <p className="para">copyrights@2022</p>
       </div>
     </div>
